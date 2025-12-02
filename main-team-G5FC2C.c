@@ -79,7 +79,7 @@ int main(int argc, char *argv[])
             matriz_2x12(A);
         } 
         else if(opcao == 7) {
-           Ajuda();
+        Ajuda();
         } 
         else if(opcao == 8) {
             limpar_tela();
