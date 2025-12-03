@@ -255,21 +255,21 @@ void determinante_matriz( int T[][TAM])
         
         // Verificar pivô
         if(A[i][i] == 0) {
-            printf("Determinante = 0 (matriz singular)\n");
-            return;
+            printf("Determinante = 0 \n");
+            return 0;
         }
         
         // Eliminação gaussiana
         for(k = i+1; k < TAM; k++) {
             double m = A[k][i] / A[i][i];
             for(j = i; j < TAM; j++)
-                A[k][j] -= m * A[i][j];
+                A[k][j] = A[k][j] - (m * A[i][j]);
         }
     }
     
     // Produto da diagonal
     for(i = 0; i < TAM; i++)
-        det *= A[i][i];
+        det = det *  A[i][i];
     
     printf(" Determinante = %.2e\n", det);
 }
