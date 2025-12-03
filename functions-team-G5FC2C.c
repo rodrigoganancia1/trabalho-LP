@@ -175,32 +175,6 @@ void matriz_2x12(int A[])
     }
     printf("]\n");
 }
-void novo_vetor(int B[]) 
-{
-    int N,k=0;
-    printf("Insira o numero da pos %d entre %d e %d:\n",k,MIN,MAX);
-    scanf("%d",&N );
-    while ( N < MIN || N > MAX){
-        printf("Erro insira novamante \nInsira o numero %d  entre %d e %d:\n",k,MIN,MAX);
-        scanf("%d",&N);}
-
-    B[0]=N;
-    while (k < TAM)
-    {
-
-            {
-        printf("Insira o numero da pos %d numero entre %d e %d :\n",k+1,MIN,MAX);
-        scanf("%d",&N);
-            }
-    while (N < MIN || N > MAX)
-        {
-            printf("Erro. Insira novamante o numero para a pos %d \n", k+1);
-            scanf("%d", &N);
-        }
-        B[k]=N;
-        k++;
-    }
-}
 void produto_interno(int A[], int B[]) {
     int k;
     long long produto = 0;

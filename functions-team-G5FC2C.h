@@ -102,12 +102,7 @@ void matriz_2x12(int A[]);
 
 // --- Funcionalidades Avançadas ---
 
-/**
- * @brief Lê um novo vetor para cálculo do produto interno.
- * * Semelhante a pedir_numeros, mas armazena num vetor secundário B.
- * * @param B Vetor onde os novos números serão guardados.
- */
-void novo_vetor(int B[]);
+
 
 /**
  * @brief Calcula o produto interno (escalar) entre dois vetores.

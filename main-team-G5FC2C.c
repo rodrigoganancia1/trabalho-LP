@@ -83,12 +83,12 @@ int main(int argc, char *argv[])
         } 
         else if(opcao == 8) {
             limpar_tela();
-            calculo_mdc(A);
+            pedir_numeros(B);
+            produto_interno(A,B);
         } 
         else if(opcao == 9) {
             limpar_tela();
-            novo_vetor(B);
-            produto_interno(A,B);
+            calculo_mdc(A);
         } 
         
         else if(opcao == 10) {
