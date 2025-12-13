@@ -23,7 +23,7 @@ $(EXEC): $(OBJS)
 clean:
 	rm -f $(OBJS) $(EXEC) *.gch
 	rm -rf docs
-	@echo "Ficheiros compilados e documentos removidos."
+	@echo "Ficheiros compilados e documentação removidos."
 
 doc:
 	@echo "A gerar documentação Doxygen..."

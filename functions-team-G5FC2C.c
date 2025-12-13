@@ -106,7 +106,7 @@ void cal_cos(int A[])
    {
       C=cos(A[k]);
       printf("O coseno da pos %d com valor %d  e : ",k ,A[k]);
-      printf("%f\n",C);
+      printf("%f rad\n",C);
    }
 }
 void multiplicacaoelementos(int A[])
@@ -237,41 +237,58 @@ void matriz_12x12(int A[], int T[][TAM])
     }
 
 }
-void determinante_matriz( int T[][TAM])
+void determinante_matriz(int T[][TAM])
 {
     int i, j, k;
     double A[TAM][TAM];
     double det = 1.0;
     
-    printf("\n=== DETERMINANTE POR ESCALONAMENTO ===\n\n");
+    printf("\n=== DETERMINANTE POR ESCALONAMENTO ===\n");
     
     // Copiar para double
     for(i = 0; i < TAM; i++)
         for(j = 0; j < TAM; j++)
-            A[i][j] = T[i][j];
+            A[i][j] = (double)T[i][j];
     
-    // Escalonamento
+    // Escalonamento de Gauss com Pivotagem
     for(i = 0; i < TAM; i++) {
         
-        // Verificar pivô
-        if(A[i][i] == 0) {
-            printf("Determinante = 0 \n");
-            return 0;
+        // Pivotagem Parcial
+        int pivot = i;
+        for(j = i + 1; j < TAM; j++) {
+            if(fabs(A[j][i]) > fabs(A[pivot][i])) {
+                pivot = j;
+            }
         }
         
-        // Eliminação gaussiana
+        if(fabs(A[pivot][i]) < 0) {
+            printf("Determinante = 0 (Coluna %d anulada)\n", i);
+            return;
+        }
+        
+        if(pivot != i) {
+            for(j = i; j < TAM; j++) {
+                double temp = A[i][j];
+                A[i][j] = A[pivot][j];
+                A[pivot][j] = temp;
+            }
+            det = -det; 
+        }
+        
+        // Eliminação
         for(k = i+1; k < TAM; k++) {
             double m = A[k][i] / A[i][i];
             for(j = i; j < TAM; j++)
-                A[k][j] = A[k][j] - (m * A[i][j]);
+               A[k][j] = A[k][j] - (m * A[i][j]);
         }
     }
     
-    // Produto da diagonal
+    
     for(i = 0; i < TAM; i++)
-        det = det *  A[i][i];
+        det = det * A[i][i];
     
     printf(" Determinante = %.2e\n", det);
 }
+
 
 

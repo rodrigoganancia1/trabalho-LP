@@ -17,13 +17,14 @@
  * @section usage_sec Como Utilizar
  * 1. Compile o programa com o comando: `make`
  * 2. Execute o programa: `./projeto_final ou make run `
- * 3. Para ajuda na linha de comandos: `./projeto_final --help`
  *
  * @section features_sec Funcionalidades
  * - Operações básicas (Cosseno, Multiplicação, Ordenação)
  * - Manipulação de Matrizes (2x12, 12x12, Determinantes)
  * - Algoritmos de Euclides (MDC)
  * - Pivotagem Parcial (Eliminação de Gauss)
+ 
+ 
  */
 #include <stdlib.h>
 #include <stdio.h>
@@ -36,10 +37,9 @@
 
 int main(int argc, char *argv[])
 {
-    if (argc > 1 && strcmp(argv[1], "--help") == 0) {
-        Ajuda();
-        return 0; 
-    }
+    printf("Bem-vindo ao programa feito para o Trabalho de Laboratorios de Programacao!\nDigite ENTER para continuar.\n\n");
+    while (getchar() != '\n');
+    
     int A[TAM],B[TAM],opcao,T[TAM][TAM],matriz_criada=0;
     
     pedir_numeros(A);
@@ -79,7 +79,8 @@ int main(int argc, char *argv[])
             matriz_2x12(A);
         } 
         else if(opcao == 7) {
-        Ajuda();
+        limpar_tela();
+            Ajuda();
         } 
         else if(opcao == 8) {
             limpar_tela();
@@ -109,7 +110,7 @@ int main(int argc, char *argv[])
             
         else if(opcao == 0) {
             limpar_tela();
-            printf("\n=======================================\n");
+            printf("\n========================================\n");
             printf("|   Obrigado por usar o programa!        |\n");
             printf("|         Team G5FC2C - LP 2025          |\n");
             printf("==========================================|\n\n");
