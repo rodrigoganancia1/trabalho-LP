@@ -102,6 +102,7 @@ void cal_cos(int A[])
 {
    int k;
    float C;
+   printf("\n=== COSSENO DA SEGUNDA METADE DO VETOR ===\n");
    for (k=(TAM/2);k<TAM;k++)
    {
       C=cos(A[k]);
@@ -123,6 +124,7 @@ void ordem_decrescente(int A[])
 {
     int i,k,aux;
     int copia[TAM];
+    printf("\n=== ORDEM DECRESCENTE ===\n");
    for(i = 0; i < TAM; i++) {
         copia[i] = A[i];
     }
@@ -163,6 +165,7 @@ void elemento_aleatorio(int A[]) {
 void matriz_2x12(int A[]) 
 {
     int k;
+    printf("\n=== MATRIZ 2x12 ===\n");
     printf("Linha 0 :  [ ");
     for(k = 0; k < TAM; k++) {
         printf("%3d ", A[k]);
@@ -185,7 +188,7 @@ void produto_interno(int A[], int B[]) {
 }
 void calculo_mdc(int A[]) {
     int k, a, b, temp;
-    
+    printf("\n=== MÁXIMO DIVISOR COMUM DE PARES CONSECUTIVOS ===\n");
     for(k = 0; k < TAM-1; k++) {
         
         a = abs(A[k]);      
@@ -202,21 +205,19 @@ void calculo_mdc(int A[]) {
 }
 void matriz_12x12(int A[], int T[][TAM])
 {
-    int i,k,aux;
+    int i,k,j,aux;
     int copia[TAM];
+    printf("\n=== MATRIZ 12x12 ===\n");
    for(i = 0; i < TAM; i++) 
     {
         copia[i] = A[i];
     }
-    for (i=0;i<TAM-1;i++)
-    {
-        for (k=i+1;k<TAM;k++)
-        {
-            if (copia[i]>copia[k])
-            {
-                aux=copia[i];
-                copia[i]=copia[k];
-                copia[k]=aux;
+     for (i = 0; i < TAM - 1; i++) {
+        for (j = 0; j < TAM - 1 - i; j++) {
+            if (copia[j] > copia[j + 1]) {
+                aux = copia[j];
+                copia[j] = copia[j + 1];
+                copia[j + 1] = aux;
             }
         }
     }
@@ -257,7 +258,7 @@ void determinante_matriz(int T[][TAM])
             }
         }
         
-        if(fabs(A[pivot][i]) < 0) {
+        if(fabs(A[pivot][i]) < 0.000001) {
             printf("Determinante = 0 (Coluna %d anulada)\n", i);
             return;
         }
@@ -277,7 +278,6 @@ void determinante_matriz(int T[][TAM])
                A[k][j] = A[k][j] - (m * A[i][j]);
         }
     }
-    
     
     for(i = 0; i < TAM; i++)
         det = det * A[i][i];

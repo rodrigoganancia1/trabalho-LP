@@ -25,22 +25,8 @@
 #define MAX 22
 
 /**
- * @brief Função principal que contém um menu interativo para manipulação de um vetor de números inteiros.
- *
- * Este programa oferece um menu interativo com várias opções para operações em um vetor de números inteiros.
- * Ele permite ao usuário escolher entre diferentes funcionalidades para manipular o vetor.
- *
- * @param argc O número de argumentos de linha de comando.
- * @param *argv  O array de argumentos de linha de comando.
- *
- * @return int Retorna 0 se o programa for executado com sucesso.
- */
-int main(int argc, char *argv);
-
-/**
  * @brief Limpa o ecrã do terminal.
- *  Utiliza comandos de sistema para limpar a consola, adaptando-se
- * ao ambiente (Linux/Unix nos laboratórios).
+ * Utiliza comandos de sistema para limpar a consola.
  */
 void limpar_tela(void);
 

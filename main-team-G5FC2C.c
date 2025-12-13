@@ -17,6 +17,14 @@
  * @section usage_sec Como Utilizar
  * 1. Compile o programa com o comando: `make`
  * 2. Execute o programa: `./projeto_final ou make run `
+ * 3. Pedir ajuda com a ./projeto_final `--help` para mais informações, ou entao dentro do programa selecionar a opção 7.
+ * 4. Insira 12 números inteiros entre -7 e 22 quando solicitado.
+ * 5. Escolha as opções do menu para realizar operações no vetor.
+ * 6. Utilize a opção 0 para sair do programa.
+ * 7. Para gerar documentação, utilize o comando: `doxygen Doxyfile` ou `make doc`.
+ * 8. A documentação gerada estará disponível na pasta `docs/html`.
+ * 9. Para limpar os ficheiros objeto e documentação, utilize: `make clean`.
+ *    
  *
  * @section features_sec Funcionalidades
  * - Operações básicas (Cosseno, Multiplicação, Ordenação)
@@ -32,12 +40,30 @@
 #define MIN -7
 #define MAX 22
 #define TAM 12
-
-int main(int argc, char *argv)
+/**
+ * @brief Função principal que contém um menu interativo para manipulação de um vetor de números inteiros.
+ *
+ * Este programa oferece um menu interativo com várias opções para operações em um vetor de números inteiros.
+ * Ele permite ao usuário escolher entre diferentes funcionalidades para manipular o vetor.
+ *
+ * @param argc O número de argumentos de linha de comando.
+ * @param *argv  O array de argumentos de linha de comando.
+ *
+ * @return int Retorna 0 se o programa for executado com sucesso.
+ */
+int main(int argc, char **argv)
 {
+    
+    for (int i = 1; i < argc; i++) 
+    {
+        if ( strcmp(argv[i], "--help") == 0) 
+        {
+            Ajuda();
+            return 0;
+        }
+    }
     printf("Bem-vindo ao programa feito para o Trabalho de Laboratorios de Programacao!\nDigite ENTER para continuar.\n\n");
     while (getchar() != '\n');
-    
     int A[TAM],B[TAM],opcao,T[TAM][TAM],matriz_criada=0;
     
     pedir_numeros(A);
@@ -108,10 +134,10 @@ int main(int argc, char *argv)
             
         else if(opcao == 0) {
             limpar_tela();
-            printf("\n|========================================|\n");
+            printf("\n|=========================================|\n");
             printf("|   Obrigado por usar o programa!         |\n");
             printf("|         Team G5FC2C - LP 2025           |\n");
-            printf("==========================================|\n\n");
+            printf("|=========================================|\n\n");
         }
         else {
             printf("\n Opção inválida! Escolha entre 0 e 11.\n");
