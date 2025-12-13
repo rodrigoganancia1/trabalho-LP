@@ -204,7 +204,8 @@ void matriz_12x12(int A[], int T[][TAM])
 {
     int i,k,aux;
     int copia[TAM];
-   for(i = 0; i < TAM; i++) {
+   for(i = 0; i < TAM; i++) 
+    {
         copia[i] = A[i];
     }
     for (i=0;i<TAM-1;i++)
@@ -245,15 +246,10 @@ void determinante_matriz(int T[][TAM])
     
     printf("\n=== DETERMINANTE POR ESCALONAMENTO ===\n");
     
-    // Copiar para double
     for(i = 0; i < TAM; i++)
         for(j = 0; j < TAM; j++)
             A[i][j] = (double)T[i][j];
-    
-    // Escalonamento de Gauss com Pivotagem
     for(i = 0; i < TAM; i++) {
-        
-        // Pivotagem Parcial
         int pivot = i;
         for(j = i + 1; j < TAM; j++) {
             if(fabs(A[j][i]) > fabs(A[pivot][i])) {
@@ -275,7 +271,6 @@ void determinante_matriz(int T[][TAM])
             det = -det; 
         }
         
-        // Eliminação
         for(k = i+1; k < TAM; k++) {
             double m = A[k][i] / A[i][i];
             for(j = i; j < TAM; j++)

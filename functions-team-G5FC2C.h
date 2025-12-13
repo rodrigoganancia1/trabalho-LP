@@ -31,11 +31,11 @@
  * Ele permite ao usuário escolher entre diferentes funcionalidades para manipular o vetor.
  *
  * @param argc O número de argumentos de linha de comando.
- * @param argv [] O array de argumentos de linha de comando.
+ * @param *argv  O array de argumentos de linha de comando.
  *
  * @return int Retorna 0 se o programa for executado com sucesso.
  */
-int main(int argc, char *argv[]);
+int main(int argc, char *argv);
 
 /**
  * @brief Limpa o ecrã do terminal.

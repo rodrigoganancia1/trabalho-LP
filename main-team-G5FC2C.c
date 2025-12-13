@@ -23,8 +23,6 @@
  * - Manipulação de Matrizes (2x12, 12x12, Determinantes)
  * - Algoritmos de Euclides (MDC)
  * - Pivotagem Parcial (Eliminação de Gauss)
- 
- 
  */
 #include <stdlib.h>
 #include <stdio.h>
@@ -35,7 +33,7 @@
 #define MAX 22
 #define TAM 12
 
-int main(int argc, char *argv[])
+int main(int argc, char *argv)
 {
     printf("Bem-vindo ao programa feito para o Trabalho de Laboratorios de Programacao!\nDigite ENTER para continuar.\n\n");
     while (getchar() != '\n');
@@ -110,9 +108,9 @@ int main(int argc, char *argv[])
             
         else if(opcao == 0) {
             limpar_tela();
-            printf("\n========================================\n");
-            printf("|   Obrigado por usar o programa!        |\n");
-            printf("|         Team G5FC2C - LP 2025          |\n");
+            printf("\n|========================================|\n");
+            printf("|   Obrigado por usar o programa!         |\n");
+            printf("|         Team G5FC2C - LP 2025           |\n");
             printf("==========================================|\n\n");
         }
         else {
