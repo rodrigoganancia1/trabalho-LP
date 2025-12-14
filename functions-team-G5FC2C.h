@@ -103,8 +103,6 @@ void matriz_2x12(int A[]);
 
 // --- Funcionalidades Avançadas ---
 
-
-
 /**
  * @brief Calcula o produto interno (escalar) entre dois vetores.
  * Realiza a soma dos produtos elemento a elemento.
@@ -122,7 +120,7 @@ void calculo_mdc(int A[]);
 
 /**
  * @brief Constrói uma matriz 12x12 através de produto externo.
- * A matriz resultante T[i][j] é o produto de A[i] pelo vetor ordenado A'[j].
+ * A matriz resultante T[i][j] é o produto de A[i] pelo vetor ordenado por ordem crecente.
  * @param A Vetor original.
  * @param T Matriz onde o resultado será armazenado.
  */
