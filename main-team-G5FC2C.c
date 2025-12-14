@@ -36,6 +36,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
+#include <time.h>
 #include "functions-team-G5FC2C.h"
 #define MIN -7
 #define MAX 22
@@ -54,6 +55,7 @@
 int main(int argc, char *argv[])
 {
     
+    srand(time(NULL));
     for (int i = 1; i < argc; i++) 
     {
         if ( strcmp(argv[i], "--help") == 0) 

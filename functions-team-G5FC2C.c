@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
+#include <time.h>
 #include "functions-team-G5FC2C.h"
 #define MIN -7
 #define MAX 22
@@ -206,8 +207,7 @@ void calculo_mdc(int A[]) {
 void matriz_12x12(int A[], int T[][TAM])
 {
     int i,k,j,aux;
-    int copia[TAM];
-    printf("\n=== MATRIZ 12x12 ===\n");
+    int copia[TAM]; 
    for(i = 0; i < TAM; i++) 
     {
         copia[i] = A[i];
@@ -227,7 +227,7 @@ void matriz_12x12(int A[], int T[][TAM])
         printf(" pos %d= %d ||",i ,copia[i]);
     }
     printf("\n");
-
+printf("\n=== MATRIZ 12x12 ===\n");
     for (i=0;i<TAM;i++)
     {
         for (k=0;k<TAM;k++)
