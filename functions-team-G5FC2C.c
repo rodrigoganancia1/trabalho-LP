@@ -95,7 +95,7 @@ void escrever_numeros(int A[])
     printf("Os numeros inseridos foram:\n||");
     for(k=0;k< TAM ;k++)
     {
-        printf(" pos %d= %d ||",k+1 ,A[k]);
+        printf(" pos %d= %d ||",k ,A[k]);
     }
     printf("\n");
 }
